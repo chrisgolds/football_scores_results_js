@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Football Scores and Results</title>
+	<script src="app.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet"> -->
+	<script src="https://kit.fontawesome.com/af002895ff.js"></script>
+
+	<style type="text/css">
+		
+		.results .row .col-sm-2 {
+
+			text-align: center;
+
+		}
+
+		.results .row .col-sm-3 {
+
+			text-align: center;
+
+		}
+
+		.yellow-card {
+
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border-color: black;
+			background-color: yellow;
+			border-radius: 25%;
+
+		}
+
+		.red-card {
+
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border-color: black;
+			background-color: red;
+			border-radius: 25%;
+
+		}
+
+	</style>
+
+</head>
+<body class="container">
+
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col" style="text-align: center; margin-bottom: 50px">
+				<h1>Football Scores and Results</h1>
+			</div>
+		</div>
+		<div class="row" style="margin-bottom: 50px">
+			<div class="col-sm-6" style="text-align: center; padding-left: 90px; padding-right: 90px">
+				<p>Start date</p>
+				<input type="date" id="start_date" class="form-control">
+			</div>
+			<div class="col-sm-6" style="text-align: center; padding-left: 90px; padding-right: 90px">
+				<p>End date</p>
+				<input type="date" id="end_date" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" style="text-align: center; margin-bottom: 50px">
+				<p>Tournament/League</p>
+				<select id="tournaments">
+					<option value="all" selected>All</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" style="text-align: center">
+				<p>IMPORTANT: Time range cannot exceed 7 days</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" style="text-align: center">
+				<button onclick="verifyDates(this.id)" id="getResults" class="btn btn-primary">Get Results</button>
+				<button onclick="getLiveData()" class="btn btn-success">Live Games</button>
+				<button onclick="verifyDates(this.id)" id="getFixtures" class="btn btn-danger">See Fixtures</button>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="results"></div>
+
+</body>
+</html>
